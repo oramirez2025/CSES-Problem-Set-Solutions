@@ -4,6 +4,39 @@
 
 
 
+// Solution without next_permutation
+
+void backtrack(std::vector<char>& word, int index, std::vector<std::string>& allPerms) {
+    if (index == word.size()) {
+        allPerms.push_back(std::string(word.begin(), word.end()));
+        return;
+    } else {
+         for (int i = index; i < word.size(); ++i) {
+            std::swap(word[index], word[i]);
+            backtrack(word, index + 1, allPerms);
+            std::swap(word[index],word[i]);
+         }
+    }
+}
+
+
+
+int main() {
+    std::string s; std::cin >> s;
+    std::vector<char> word(s.begin(),s.end());
+    std::vector<std::string> allPerms;
+    backtrack(word, 0, allPerms);
+    std::sort(allPerms.begin(), allPerms.end());
+    std::cout << allPerms.size() << '\n';
+    for (auto& p : allPerms) {
+        std::cout << p << '\n';
+    }
+
+}
+
+
+// Solution using next_permutation
+
 int main() {
     std::string s; std::cin >> s;
     std::vector<char> word;

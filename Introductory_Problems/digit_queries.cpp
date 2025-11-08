@@ -16,6 +16,7 @@ typedef long long ll;
 // f(1) = 9, f(d) = f(d - 1) + (d * 10) * (9^{d - 1}), where d >= 2
 // to find the right endpoint we do 
 // (f(d) + ((d + 1) * 10) * (9^{d})) - 1
+// come back to this later lol 
 */
 
 void solve(ll k) {
@@ -39,6 +40,10 @@ void solve(ll k) {
         }
         rr--;
         std::cout << "l = " << l << " rr = " << rr << " d = " << d << " number = " << number << '\n';
+        // rrr = 
+        for (int i = number; i < number + 10; ++i) {
+
+        }
     }
 }
 
